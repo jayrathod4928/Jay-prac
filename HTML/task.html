@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav a:link {
+            margin-right: 50px;
+            /*margin-top: 10px;*/
+            display: inline-block;
+        }
+
+        header {
+            display: flex;
+            padding: 10px;
+            background-color: #087f5b;
+
+
+        }
+
+        nav {
+            color: #1098ad;
+            padding-left: 40%;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        p {
+            font-size: 14px;
+
+        }
+        .img1{
+            width: 40px;
+            height: 40px;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: nowrap;
+            /*background-color: DodgerBlue;*/
+            margin: 20px;
+
+        }
+
+        .flex-container > div {
+            /*background-color: #f1f1f1;*/
+            /*width: 100px;*/
+            margin: 10px;
+            text-align: left;
+            /*line-height: 75px;*/
+            font-size: 30px;
+            padding: 10px;
+
+        }
+        .logo{
+            width: 100px;
+            height: auto;
+            /*height: 30px;*/
+            margin-left: 82px ;
+         }
+        .img1{
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+        p{
+            border: 2px solid black;
+            border-radius: 0 0 10px 10px;
+            margin-top: -8px;
+            padding: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <img class="logo" src="logo-light.png" alt="">
+    <nav class="nav">
+        <a href="#">Blog</a>
+        <a href="#">Challenges</a>
+        <a href="#">Flexbox</a>
+        <a href="#">Css Grid</a>
+    </nav>
+</header>
+<br>
+<div class="flex-container">
+    <div>
+        <img class="img1" src="tree-736885_1280.jpeg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolores, eveniet facere molestias obcaecati
+            similique tenetur vel? Dolor ducimus eos et excepturi iusto, possimus quam rerum tenetur unde vel velit.</p>
+    </div>
+    <div>
+        <img class="img1" src="tree-736885_1280.jpeg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolores, eveniet facere molestias obcaecati
+            similique tenetur vel? Dolor ducimus eos et excepturi iusto, possimus quam rerum tenetur unde vel velit.</p>
+    </div>
+    <div><img class="img1" src="tree-736885_1280.jpeg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolores, eveniet facere molestias obcaecati
+            similique tenetur vel? Dolor ducimus eos et excepturi iusto, possimus quam rerum tenetur unde vel velit.</p></div>
+
+</div>
+
+</body>
+</html>
