@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteUser } from '../redux/userSlice';
-import { Table, Button, Container } from 'react-bootstrap';
+import { Table, Button, Container, Modal } from 'react-bootstrap';
 
 const Home = () => {
     const users = useSelector((state) => state.users.users);
     const dispatch = useDispatch();
+
+    const [show, setShow] = useState(false);
+    const [selectedUserId, setSelectedUserId] = useState(null);
+
+    const handleClose = () => setShow(false);
+    const handleShow = (id) => {
+        setSelectedUserId(id);
+        setShow(true);
+    };
+
+    const handleDelete = () => {
+        if (selectedUserId !== null) {
+            dispatch(deleteUser(selectedUserId));
+            setShow(false);
+        }
+    };
 
     return (
         <Container className="mt-5">
@@ -34,7 +50,7 @@ const Home = () => {
                                 <Link to={`/edit/${user.id}`}>
                                     <Button variant="warning" size="sm" className="me-2">Update</Button>
                                 </Link>
-                                <Button variant="danger" size="sm" onClick={() => dispatch(deleteUser(user.id))}>
+                                <Button variant="danger" size="sm" onClick={() => handleShow(user.id)}>
                                     Delete
                                 </Button>
                             </td>
@@ -47,6 +63,21 @@ const Home = () => {
                 )}
                 </tbody>
             </Table>
+
+            <Modal show={show} onHide={handleClose} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Confirm Delete</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Are you sure you want to delete this user?</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Cancel
+                    </Button>
+                    <Button variant="danger" onClick={handleDelete}>
+                        Delete
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </Container>
     );
 };
